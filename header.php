@@ -25,26 +25,36 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'strapped' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+	    <nav role="navigation" id="navbar-main">
+	    	<div class="navbar navbar-inverse navbar-static-top">
+	    		<div class="container">
+	    			<!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
+	    			<div class="navbar-header">
+	    				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	    					<span class="icon-bar"></span>
+	    					<span class="icon-bar"></span>
+	    					<span class="icon-bar"></span>
+	    				</button>
+	    				<?php strapped_the_custom_logo(); ?>
+	    			</div>
+	    			<div class="navbar-collapse collapse navbar-responsive-collapse">
+	    				<?php
+	    				$args = array(
+	    					'theme_location' => 'primary',
+	    					'depth'      => 2,
+	    					'container'  => false,
+	    					'menu_class'     => 'nav navbar-nav',
+	    					'walker'     => new Bootstrap_Walker_Nav_Menu()
+	    				);
+	    				if (has_nav_menu('primary')) {
+	    					wp_nav_menu($args);
+	    				}
+	    				?>
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'strapped' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav><!-- #site-navigation -->
+	    			</div>
+	    		</div> <!-- container -->
+	    	</div>   <!-- navbar -->        
+	    </nav> <!-- navigation -->
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
