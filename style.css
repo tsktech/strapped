@@ -5918,6 +5918,33 @@ button.close {
   clear: both;
   margin: 0 0 1.5em; }
 
+.site-content {
+  margin-right: -15px;
+  margin-left: -15px; }
+  .site-content:before, .site-content:after {
+    display: table;
+    content: " "; }
+  .site-content:after {
+    clear: both; }
+  .site-content .content-area {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media (min-width: 992px) {
+      .site-content .content-area {
+        float: left;
+        width: 75%; } }
+  .site-content .widget-area {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px; }
+    @media (min-width: 992px) {
+      .site-content .widget-area {
+        float: left;
+        width: 25%; } }
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
