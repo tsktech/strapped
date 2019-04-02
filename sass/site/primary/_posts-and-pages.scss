@@ -27,6 +27,34 @@
 	margin: 0 0 1.5em;
 }
 
+.entry-meta,
+.entry-footer {
+
+	font-size: 12px;
+
+	.fa {
+		color: $color__light-grey;
+		margin-right: 2px;
+	}
+
+	span {
+		margin-right: 10px;
+		display: inline-block;
+
+		&:last-child {
+			margin-right: 0px;
+		}
+	} 
+
+	a {
+		color: $color__light-grey;
+		&:hover {
+			text-decoration: none;
+			color: $gray-dark;
+		}
+	}
+}
+
 .site-content {
 	@include make-row();
 	

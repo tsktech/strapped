@@ -57,6 +57,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "bootstrap";
 
 /*--------------------------------------------------------------
+# fontawesome
+--------------------------------------------------------------*/
+$fa-font-path: "./fonts";
+@import "font-awesome";
+
+
+/*--------------------------------------------------------------
 # Normalize
 
 // @import "normalize";
