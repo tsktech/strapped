@@ -57,6 +57,7 @@
 
 .site-content {
 	@include make-row();
+	word-break: break-word; 
 	
 	.content-area {
 		@include make-md-column(9);
@@ -66,4 +67,3 @@
 		@include make-md-column(3);
 	}
 }
-

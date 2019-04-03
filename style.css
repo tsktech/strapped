@@ -8059,7 +8059,8 @@ button.close {
     /* @extend .panel-body; */ }
   .widget ul {
     padding-top: 15px;
-    padding-bottom: 15px; }
+    padding-bottom: 15px;
+    padding-right: 15px; }
   .widget table {
     width: 100%;
     max-width: 100%; }
@@ -8120,7 +8121,8 @@ button.close {
 
 .site-content {
   margin-right: -15px;
-  margin-left: -15px; }
+  margin-left: -15px;
+  word-break: break-word; }
   .site-content:before, .site-content:after {
     display: table;
     content: " "; }
