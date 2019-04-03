@@ -8052,6 +8052,20 @@ button.close {
   /* Make sure select elements fit in widgets. */ }
   .widget select {
     max-width: 100%; }
+  .widget .tagcloud,
+  .widget .textwidget,
+  .widget .calendar_wrap {
+    padding: 15px;
+    /* @extend .panel-body; */ }
+  .widget ul {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  .widget table {
+    width: 100%;
+    max-width: 100%; }
+  .widget.widget_search {
+    border: none;
+    box-shadow: none; }
 
 /*--------------------------------------------------------------
 # Content
