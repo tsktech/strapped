@@ -3,6 +3,7 @@
  * Enqueue scripts and styles.
  */
 function strapped_scripts() {
+	// wp_enqueue_style( 'strapped-style', get_template_directory_uri() . '/style.min.css' );
 	wp_enqueue_style( 'strapped-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'strapped-js', get_template_directory_uri() . '/js/dist/scripts.min.js', array(), '20151215', true );
