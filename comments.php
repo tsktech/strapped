@@ -98,23 +98,27 @@ if ( post_password_required() ) {
         'fields' => apply_filters( 'comment_form_default_fields', array(
  
 	    'author' =>
-	      '<div class="form-group">' .
-	      '<label for="author">' . __( 'Name', 'bootstrapwp' ) . '</label> ' .
-	      ( $req ? '<span class="required">*</span>' : '' ) .
-	      '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-	      '" size="30"' . $aria_req . ' /></div>',
+		    '<div class="form-group">' .
+		    '<label for="author">' . __( 'Name', 'bootstrapwp' ) . '</label> ' .
+		    ( $req ? '<span class="required">*</span>' : '' ) .
+		    '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+		    '" size="30"' . $aria_req . ' /></div>',
  
 	    'email' =>
-	      '<div class="form-group"><label for="email">' . __( 'Email', 'bootstrapwp' ) . '</label> ' .
-	      ( $req ? '<span class="required">*</span>' : '' ) .
-	      '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-	      '" size="30"' . $aria_req . ' /></div>',
+		    '<div class="form-group"><label for="email">' . __( 'Email', 'bootstrapwp' ) . '</label> ' .
+		    ( $req ? '<span class="required">*</span>' : '' ) .
+		    '<input class="form-control" id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		    '" size="30"' . $aria_req . ' /></div>',
  
 	    'url' =>
-	      '<div class="form-group"><label for="url">' .
-	      __( 'Website', 'bootstrapwp' ) . '</label>' .
-	      '<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
-	      '" size="30" /></div>'
+			'<div class="form-group"><label for="url">' .
+			__( 'Website', 'bootstrapwp' ) . '</label>' .
+			'<input class="form-control" id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+			'" size="30" /></div>',
+
+	    'cookies' =>
+		    '<div class="checkbox"><label><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">' .
+		    'Save my name, email, and website in this browser for the next time I comment.</label></div>'
 	    )
 	  ),
 	);
