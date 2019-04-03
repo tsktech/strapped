@@ -1,9 +1,11 @@
-footer {
+.site-footer {
 	background-color: $navbar-default-bg;
 	color: $color__light-grey;
+
+	.site-info {
+		margin: 20px 0;
+	} 
 }
 
-.site-info {
-	margin: 20px 0;
-} 
+
 
