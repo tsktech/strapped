@@ -272,8 +272,9 @@ th {
     page-break-after: avoid; }
   .navbar {
     display: none; }
-  .btn > .caret,
-  .dropup > .btn > .caret {
+  .btn > .caret, .widget .tagcloud a > .caret,
+  .dropup > .btn > .caret, .widget .tagcloud
+  .dropup > a > .caret {
     border-top-color: #000 !important; }
   .label {
     border: 1px solid #000; }
@@ -2512,15 +2513,18 @@ textarea.form-control {
   margin-bottom: 0; }
   .form-control-static.input-lg, .input-group-lg > .form-control-static.form-control,
   .input-group-lg > .form-control-static.input-group-addon,
-  .input-group-lg > .input-group-btn > .form-control-static.btn, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
+  .input-group-lg > .input-group-btn > .form-control-static.btn, .widget .tagcloud
+  .input-group-lg > .input-group-btn > a.form-control-static, .form-control-static.input-sm, .input-group-sm > .form-control-static.form-control,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn {
+  .input-group-sm > .input-group-btn > .form-control-static.btn, .widget .tagcloud
+  .input-group-sm > .input-group-btn > a.form-control-static {
     padding-right: 0;
     padding-left: 0; }
 
 .input-sm, .input-group-sm > .form-control,
 .input-group-sm > .input-group-addon,
-.input-group-sm > .input-group-btn > .btn {
+.input-group-sm > .input-group-btn > .btn, .widget .tagcloud
+.input-group-sm > .input-group-btn > a {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -2566,7 +2570,8 @@ select[multiple].input-sm,
 
 .input-lg, .input-group-lg > .form-control,
 .input-group-lg > .input-group-addon,
-.input-group-lg > .input-group-btn > .btn {
+.input-group-lg > .input-group-btn > .btn, .widget .tagcloud
+.input-group-lg > .input-group-btn > a {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
@@ -2629,7 +2634,8 @@ select[multiple].input-lg,
 
 .input-lg + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
 .input-group-lg > .input-group-addon + .form-control-feedback,
-.input-group-lg > .input-group-btn > .btn + .form-control-feedback,
+.input-group-lg > .input-group-btn > .btn + .form-control-feedback, .widget .tagcloud
+.input-group-lg > .input-group-btn > a + .form-control-feedback,
 .input-group-lg + .form-control-feedback,
 .form-group-lg .form-control + .form-control-feedback {
   width: 46px;
@@ -2638,7 +2644,8 @@ select[multiple].input-lg,
 
 .input-sm + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
 .input-group-sm > .input-group-addon + .form-control-feedback,
-.input-group-sm > .input-group-btn > .btn + .form-control-feedback,
+.input-group-sm > .input-group-btn > .btn + .form-control-feedback, .widget .tagcloud
+.input-group-sm > .input-group-btn > a + .form-control-feedback,
 .input-group-sm + .form-control-feedback,
 .form-group-sm .form-control + .form-control-feedback {
   width: 30px;
@@ -2817,7 +2824,7 @@ select[multiple].input-lg,
     padding-top: 6px;
     font-size: 12px; } }
 
-.btn {
+.btn, .widget .tagcloud a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -2837,59 +2844,73 @@ select[multiple].input-lg,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
-  .btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+  .btn:focus, .widget .tagcloud a:focus, .btn.focus, .widget .tagcloud a.focus, .btn:active:focus, .widget .tagcloud a:active:focus, .btn:active.focus, .widget .tagcloud a:active.focus, .btn.active:focus, .widget .tagcloud a.active:focus, .btn.active.focus, .widget .tagcloud a.active.focus {
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
-  .btn:hover, .btn:focus, .btn.focus {
+  .btn:hover, .widget .tagcloud a:hover, .btn:focus, .widget .tagcloud a:focus, .btn.focus, .widget .tagcloud a.focus {
     color: #333;
     text-decoration: none; }
-  .btn:active, .btn.active {
+  .btn:active, .widget .tagcloud a:active, .btn.active, .widget .tagcloud a.active {
     background-image: none;
     outline: 0;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
-  .btn.disabled, .btn[disabled],
-  fieldset[disabled] .btn {
+  .btn.disabled, .widget .tagcloud a.disabled, .btn[disabled], .widget .tagcloud a[disabled],
+  fieldset[disabled] .btn,
+  fieldset[disabled] .widget .tagcloud a, .widget .tagcloud
+  fieldset[disabled] a {
     cursor: not-allowed;
     filter: alpha(opacity=65);
     opacity: 0.65;
     box-shadow: none; }
 
-a.btn.disabled,
-fieldset[disabled] a.btn {
+a.btn.disabled, .widget .tagcloud a.disabled,
+fieldset[disabled] a.btn,
+fieldset[disabled] .widget .tagcloud a, .widget .tagcloud
+fieldset[disabled] a {
   pointer-events: none; }
 
-.btn-default {
+.btn-default, .widget .tagcloud a {
   color: #333;
   background-color: #fff;
   border-color: #ccc; }
-  .btn-default:focus, .btn-default.focus {
+  .btn-default:focus, .widget .tagcloud a:focus, .btn-default.focus, .widget .tagcloud a.focus {
     color: #333;
     background-color: #e6e6e6;
     border-color: #8c8c8c; }
-  .btn-default:hover {
+  .btn-default:hover, .widget .tagcloud a:hover {
     color: #333;
     background-color: #e6e6e6;
     border-color: #adadad; }
-  .btn-default:active, .btn-default.active,
-  .open > .btn-default.dropdown-toggle {
+  .btn-default:active, .widget .tagcloud a:active, .btn-default.active, .widget .tagcloud a.active,
+  .open > .btn-default.dropdown-toggle, .widget .tagcloud
+  .open > a.dropdown-toggle {
     color: #333;
     background-color: #e6e6e6;
     background-image: none;
     border-color: #adadad; }
-    .btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus,
-    .open > .btn-default.dropdown-toggle:hover,
-    .open > .btn-default.dropdown-toggle:focus,
-    .open > .btn-default.dropdown-toggle.focus {
+    .btn-default:active:hover, .widget .tagcloud a:active:hover, .btn-default:active:focus, .widget .tagcloud a:active:focus, .btn-default:active.focus, .widget .tagcloud a:active.focus, .btn-default.active:hover, .widget .tagcloud a.active:hover, .btn-default.active:focus, .widget .tagcloud a.active:focus, .btn-default.active.focus, .widget .tagcloud a.active.focus,
+    .open > .btn-default.dropdown-toggle:hover, .widget .tagcloud
+    .open > a.dropdown-toggle:hover,
+    .open > .btn-default.dropdown-toggle:focus, .widget .tagcloud
+    .open > a.dropdown-toggle:focus,
+    .open > .btn-default.dropdown-toggle.focus, .widget .tagcloud
+    .open > a.dropdown-toggle.focus {
       color: #333;
       background-color: #d4d4d4;
       border-color: #8c8c8c; }
-  .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled.focus, .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled].focus,
+  .btn-default.disabled:hover, .widget .tagcloud a.disabled:hover, .btn-default.disabled:focus, .widget .tagcloud a.disabled:focus, .btn-default.disabled.focus, .widget .tagcloud a.disabled.focus, .btn-default[disabled]:hover, .widget .tagcloud a[disabled]:hover, .btn-default[disabled]:focus, .widget .tagcloud a[disabled]:focus, .btn-default[disabled].focus, .widget .tagcloud a[disabled].focus,
   fieldset[disabled] .btn-default:hover,
+  fieldset[disabled] .widget .tagcloud a:hover, .widget .tagcloud
+  fieldset[disabled] a:hover,
   fieldset[disabled] .btn-default:focus,
-  fieldset[disabled] .btn-default.focus {
+  fieldset[disabled] .widget .tagcloud a:focus, .widget .tagcloud
+  fieldset[disabled] a:focus,
+  fieldset[disabled] .btn-default.focus,
+  fieldset[disabled] .widget .tagcloud a.focus, .widget .tagcloud
+  fieldset[disabled] a.focus {
     background-color: #fff;
     border-color: #ccc; }
-  .btn-default .badge {
+  .btn-default .badge, .widget .tagcloud a .badge {
     color: #fff;
     background-color: #333; }
 
@@ -3088,19 +3109,19 @@ fieldset[disabled] a.btn {
     color: #777777;
     text-decoration: none; }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, .widget .tagcloud .btn-group-lg > a {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.3333333;
   border-radius: 6px; }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, .widget .tagcloud .btn-group-sm > a {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
   border-radius: 3px; }
 
-.btn-xs, .btn-group-xs > .btn {
+.btn-xs, .btn-group-xs > .btn, .widget .tagcloud .btn-group-xs > a {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -3277,20 +3298,29 @@ tbody.collapse.in {
   position: relative;
   display: inline-block;
   vertical-align: middle; }
-  .btn-group > .btn,
-  .btn-group-vertical > .btn {
+  .btn-group > .btn, .widget .tagcloud .btn-group > a,
+  .btn-group-vertical > .btn, .widget .tagcloud
+  .btn-group-vertical > a {
     position: relative;
     float: left; }
-    .btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active,
-    .btn-group-vertical > .btn:hover,
-    .btn-group-vertical > .btn:focus,
-    .btn-group-vertical > .btn:active,
-    .btn-group-vertical > .btn.active {
+    .btn-group > .btn:hover, .widget .tagcloud .btn-group > a:hover, .btn-group > .btn:focus, .widget .tagcloud .btn-group > a:focus, .btn-group > .btn:active, .widget .tagcloud .btn-group > a:active, .btn-group > .btn.active, .widget .tagcloud .btn-group > a.active,
+    .btn-group-vertical > .btn:hover, .widget .tagcloud
+    .btn-group-vertical > a:hover,
+    .btn-group-vertical > .btn:focus, .widget .tagcloud
+    .btn-group-vertical > a:focus,
+    .btn-group-vertical > .btn:active, .widget .tagcloud
+    .btn-group-vertical > a:active,
+    .btn-group-vertical > .btn.active, .widget .tagcloud
+    .btn-group-vertical > a.active {
       z-index: 2; }
 
-.btn-group .btn + .btn,
+.btn-group .btn + .btn, .btn-group .widget .tagcloud a + .btn, .widget .tagcloud .btn-group a + .btn, .btn-group .widget .tagcloud .btn + a, .widget .tagcloud .btn-group .btn + a, .btn-group .widget .tagcloud a + a, .widget .tagcloud .btn-group a + a,
 .btn-group .btn + .btn-group,
+.btn-group .widget .tagcloud a + .btn-group, .widget .tagcloud
+.btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
+.btn-group .widget .tagcloud .btn-group + a, .widget .tagcloud
+.btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px; }
 
@@ -3301,25 +3331,25 @@ tbody.collapse.in {
     content: " "; }
   .btn-toolbar:after {
     clear: both; }
-  .btn-toolbar .btn,
+  .btn-toolbar .btn, .btn-toolbar .widget .tagcloud a, .widget .tagcloud .btn-toolbar a,
   .btn-toolbar .btn-group,
   .btn-toolbar .input-group {
     float: left; }
-  .btn-toolbar > .btn,
+  .btn-toolbar > .btn, .widget .tagcloud .btn-toolbar > a,
   .btn-toolbar > .btn-group,
   .btn-toolbar > .input-group {
     margin-left: 5px; }
 
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .widget .tagcloud .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0; }
 
-.btn-group > .btn:first-child {
+.btn-group > .btn:first-child, .widget .tagcloud .btn-group > a:first-child {
   margin-left: 0; }
-  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .widget .tagcloud .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0; }
 
-.btn-group > .btn:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .widget .tagcloud .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
@@ -3327,15 +3357,15 @@ tbody.collapse.in {
 .btn-group > .btn-group {
   float: left; }
 
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .widget .tagcloud .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
 
-.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child, .widget .tagcloud .btn-group > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
-.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child, .widget .tagcloud .btn-group > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -3343,11 +3373,11 @@ tbody.collapse.in {
 .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn + .dropdown-toggle, .widget .tagcloud .btn-group > a + .dropdown-toggle {
   padding-right: 8px;
   padding-left: 8px; }
 
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .widget .tagcloud .btn-group-lg.btn-group > a + .dropdown-toggle {
   padding-right: 12px;
   padding-left: 12px; }
 
@@ -3356,19 +3386,20 @@ tbody.collapse.in {
   .btn-group.open .dropdown-toggle.btn-link {
     box-shadow: none; }
 
-.btn .caret {
+.btn .caret, .widget .tagcloud a .caret {
   margin-left: 0; }
 
-.btn-lg .caret, .btn-group-lg > .btn .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .widget .tagcloud .btn-group-lg > a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0; }
 
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .widget .tagcloud .btn-group-lg > a .caret, .widget .tagcloud .dropup .btn-group-lg > a .caret {
   border-width: 0 5px 5px; }
 
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, .widget .tagcloud .btn-group-vertical > a,
 .btn-group-vertical > .btn-group,
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn, .widget .tagcloud
+.btn-group-vertical > .btn-group > a {
   display: block;
   float: none;
   width: 100%;
@@ -3381,40 +3412,42 @@ tbody.collapse.in {
 .btn-group-vertical > .btn-group:after {
   clear: both; }
 
-.btn-group-vertical > .btn-group > .btn {
+.btn-group-vertical > .btn-group > .btn, .widget .tagcloud .btn-group-vertical > .btn-group > a {
   float: none; }
 
-.btn-group-vertical > .btn + .btn,
-.btn-group-vertical > .btn + .btn-group,
-.btn-group-vertical > .btn-group + .btn,
+.btn-group-vertical > .btn + .btn, .widget .tagcloud .btn-group-vertical > a + .btn, .widget .tagcloud .btn-group-vertical > .btn + a, .widget .tagcloud .btn-group-vertical > a + a,
+.btn-group-vertical > .btn + .btn-group, .widget .tagcloud
+.btn-group-vertical > a + .btn-group,
+.btn-group-vertical > .btn-group + .btn, .widget .tagcloud
+.btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0; }
 
-.btn-group-vertical > .btn:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .widget .tagcloud .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0; }
 
-.btn-group-vertical > .btn:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .widget .tagcloud .btn-group-vertical > a:first-child:not(:last-child) {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .widget .tagcloud .btn-group-vertical > a:last-child:not(:first-child) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px; }
 
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .widget .tagcloud .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0; }
 
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .widget .tagcloud .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0; }
 
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .widget .tagcloud .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
@@ -3423,20 +3456,23 @@ tbody.collapse.in {
   width: 100%;
   table-layout: fixed;
   border-collapse: separate; }
-  .btn-group-justified > .btn,
+  .btn-group-justified > .btn, .widget .tagcloud .btn-group-justified > a,
   .btn-group-justified > .btn-group {
     display: table-cell;
     float: none;
     width: 1%; }
-  .btn-group-justified > .btn-group .btn {
+  .btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .widget .tagcloud a, .widget .tagcloud .btn-group-justified > .btn-group a {
     width: 100%; }
   .btn-group-justified > .btn-group .dropdown-menu {
     left: auto; }
 
-[data-toggle="buttons"] > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn input[type="checkbox"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="radio"],
-[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"] {
+[data-toggle="buttons"] > .btn input[type="radio"], .widget .tagcloud [data-toggle="buttons"] > a input[type="radio"],
+[data-toggle="buttons"] > .btn input[type="checkbox"], .widget .tagcloud
+[data-toggle="buttons"] > a input[type="checkbox"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="radio"], .widget .tagcloud
+[data-toggle="buttons"] > .btn-group > a input[type="radio"],
+[data-toggle="buttons"] > .btn-group > .btn input[type="checkbox"], .widget .tagcloud
+[data-toggle="buttons"] > .btn-group > a input[type="checkbox"] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
   pointer-events: none; }
@@ -3485,13 +3521,15 @@ tbody.collapse.in {
   border-radius: 4px; }
   .input-group-addon.input-sm,
   .input-group-sm > .input-group-addon,
-  .input-group-sm > .input-group-btn > .input-group-addon.btn {
+  .input-group-sm > .input-group-btn > .input-group-addon.btn, .widget .tagcloud
+  .input-group-sm > .input-group-btn > a.input-group-addon {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 3px; }
   .input-group-addon.input-lg,
   .input-group-lg > .input-group-addon,
-  .input-group-lg > .input-group-btn > .input-group-addon.btn {
+  .input-group-lg > .input-group-btn > .input-group-addon.btn, .widget .tagcloud
+  .input-group-lg > .input-group-btn > a.input-group-addon {
     padding: 10px 16px;
     font-size: 18px;
     border-radius: 6px; }
@@ -3501,11 +3539,15 @@ tbody.collapse.in {
 
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
-.input-group-btn:first-child > .btn,
-.input-group-btn:first-child > .btn-group > .btn,
+.input-group-btn:first-child > .btn, .widget .tagcloud
+.input-group-btn:first-child > a,
+.input-group-btn:first-child > .btn-group > .btn, .widget .tagcloud
+.input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .dropdown-toggle,
-.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
-.input-group-btn:last-child > .btn-group:not(:last-child) > .btn {
+.input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle), .widget .tagcloud
+.input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
+.input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .widget .tagcloud
+.input-group-btn:last-child > .btn-group:not(:last-child) > a {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0; }
 
@@ -3514,11 +3556,15 @@ tbody.collapse.in {
 
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
-.input-group-btn:last-child > .btn,
-.input-group-btn:last-child > .btn-group > .btn,
+.input-group-btn:last-child > .btn, .widget .tagcloud
+.input-group-btn:last-child > a,
+.input-group-btn:last-child > .btn-group > .btn, .widget .tagcloud
+.input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .dropdown-toggle,
-.input-group-btn:first-child > .btn:not(:first-child),
-.input-group-btn:first-child > .btn-group:not(:first-child) > .btn {
+.input-group-btn:first-child > .btn:not(:first-child), .widget .tagcloud
+.input-group-btn:first-child > a:not(:first-child),
+.input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .widget .tagcloud
+.input-group-btn:first-child > .btn-group:not(:first-child) > a {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0; }
 
@@ -3529,16 +3575,16 @@ tbody.collapse.in {
   position: relative;
   font-size: 0;
   white-space: nowrap; }
-  .input-group-btn > .btn {
+  .input-group-btn > .btn, .widget .tagcloud .input-group-btn > a {
     position: relative; }
-    .input-group-btn > .btn + .btn {
+    .input-group-btn > .btn + .btn, .widget .tagcloud .input-group-btn > a + .btn, .widget .tagcloud .input-group-btn > .btn + a, .widget .tagcloud .input-group-btn > a + a {
       margin-left: -1px; }
-    .input-group-btn > .btn:hover, .input-group-btn > .btn:focus, .input-group-btn > .btn:active {
+    .input-group-btn > .btn:hover, .widget .tagcloud .input-group-btn > a:hover, .input-group-btn > .btn:focus, .widget .tagcloud .input-group-btn > a:focus, .input-group-btn > .btn:active, .widget .tagcloud .input-group-btn > a:active {
       z-index: 2; }
-  .input-group-btn:first-child > .btn,
+  .input-group-btn:first-child > .btn, .widget .tagcloud .input-group-btn:first-child > a,
   .input-group-btn:first-child > .btn-group {
     margin-right: -1px; }
-  .input-group-btn:last-child > .btn,
+  .input-group-btn:last-child > .btn, .widget .tagcloud .input-group-btn:last-child > a,
   .input-group-btn:last-child > .btn-group {
     z-index: 2;
     margin-left: -1px; }
@@ -3914,10 +3960,10 @@ tbody.collapse.in {
 .navbar-btn {
   margin-top: 8px;
   margin-bottom: 8px; }
-  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn {
+  .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .widget .tagcloud .btn-group-sm > a.navbar-btn {
     margin-top: 10px;
     margin-bottom: 10px; }
-  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn {
+  .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .widget .tagcloud .btn-group-xs > a.navbar-btn {
     margin-top: 14px;
     margin-bottom: 14px; }
 
@@ -4210,7 +4256,7 @@ tbody.collapse.in {
   border-radius: .25em; }
   .label:empty {
     display: none; }
-  .btn .label {
+  .btn .label, .widget .tagcloud a .label {
     position: relative;
     top: -1px; }
 
@@ -4264,11 +4310,12 @@ a.label:hover, a.label:focus {
   border-radius: 10px; }
   .badge:empty {
     display: none; }
-  .btn .badge {
+  .btn .badge, .widget .tagcloud a .badge {
     position: relative;
     top: -1px; }
-  .btn-xs .badge, .btn-group-xs > .btn .badge,
-  .btn-group-xs > .btn .badge {
+  .btn-xs .badge, .btn-group-xs > .btn .badge, .widget .tagcloud .btn-group-xs > a .badge,
+  .btn-group-xs > .btn .badge, .widget .tagcloud
+  .btn-group-xs > a .badge {
     top: 0;
     padding: 1px 5px; }
   .list-group-item.active > .badge,
@@ -5122,10 +5169,10 @@ button.close {
     content: " "; }
   .modal-footer:after {
     clear: both; }
-  .modal-footer .btn + .btn {
+  .modal-footer .btn + .btn, .modal-footer .widget .tagcloud a + .btn, .widget .tagcloud .modal-footer a + .btn, .modal-footer .widget .tagcloud .btn + a, .widget .tagcloud .modal-footer .btn + a, .modal-footer .widget .tagcloud a + a, .widget .tagcloud .modal-footer a + a {
     margin-bottom: 0;
     margin-left: 5px; }
-  .modal-footer .btn-group .btn + .btn {
+  .modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .widget .tagcloud a + .btn, .widget .tagcloud .modal-footer .btn-group a + .btn, .modal-footer .btn-group .widget .tagcloud .btn + a, .widget .tagcloud .modal-footer .btn-group .btn + a, .modal-footer .btn-group .widget .tagcloud a + a, .widget .tagcloud .modal-footer .btn-group a + a {
     margin-left: -1px; }
   .modal-footer .btn-block + .btn-block {
     margin-left: 0; }
@@ -5514,7 +5561,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
-  .carousel-caption .btn {
+  .carousel-caption .btn, .carousel-caption .widget .tagcloud a, .widget .tagcloud .carousel-caption a {
     text-shadow: none; }
 
 @media screen and (min-width: 768px) {
@@ -8067,6 +8114,8 @@ button.close {
   .widget.widget_search {
     border: none;
     box-shadow: none; }
+  .widget .tagcloud a {
+    margin-bottom: 5px; }
 
 /*--------------------------------------------------------------
 # Content

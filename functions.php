@@ -100,14 +100,6 @@ function strapped_content_width() {
 }
 add_action( 'after_setup_theme', 'strapped_content_width', 0 );
 
-function set_widget_tag_cloud_args($args) {
-  $my_args = array('smallest' => 10, 'largest' => 16, 'orderby'=>'count', 'order'=>'DESC' );
-  $args = wp_parse_args( $args, $my_args );
-	return $args;
-}
-// add_filter('widget_tag_cloud_args','set_widget_tag_cloud_args');
-// https://www.howtosolutions.net/2016/08/wordpress-changing-cloud-tag-widget-settings/
-
 if ( !function_exists( 'strapped_the_custom_logo' ) ) :
 /**
  * Displays the optional custom logo.
@@ -129,6 +121,29 @@ function strapped_the_custom_logo() {
     echo $output;
 }
 endif;
+
+/**
+ * Editing the Tag Widget
+ */
+function my_widget_tag_cloud_args( $args ) {
+  $args['largest'] = 11;
+  $args['smallest'] = 11;
+  $args['unit'] = 'px';
+  return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'my_widget_tag_cloud_args' );
+
+
+/**
+ * Editing the Tag Widget / not used for comapre only
+ */
+function set_widget_tag_cloud_args($args) {
+  $my_args = array('smallest' => 10, 'largest' => 16, 'orderby'=>'count', 'order'=>'DESC' );
+  $args = wp_parse_args( $args, $my_args );
+	return $args;
+}
+// add_filter('widget_tag_cloud_args','set_widget_tag_cloud_args');
+// https://www.howtosolutions.net/2016/08/wordpress-changing-cloud-tag-widget-settings/
 
 
 
