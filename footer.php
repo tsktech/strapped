@@ -14,11 +14,13 @@
 		</div><!-- #content -->
 	</div><!-- .container -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapped' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'strapped' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'strapped' ), 'strapped', '<a href="http://braginteractive.com" rel="designer">Brad Williams</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="container">
+			<div class="site-info">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'strapped' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'strapped' ), 'WordPress' ); ?></a>
+				<span class="sep"> | </span>
+				<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'strapped' ), 'strapped', '<a href="http://braginteractive.com" rel="designer">Brad Williams</a>' ); ?>
+			</div><!-- .site-info -->
+		</div><!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
